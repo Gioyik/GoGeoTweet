@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Geotweet</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <div id="container">
+            <section id="section-confirmation">
+                <h2 aling=center >GoGeoTweet</h2>
+                <p>If the geo-position is not exact, click on the map to adjust it.</p>
+                <div id="map"></div>
+            </section>
+            <section id="section-tweets">
+                <h2>Tweets near you location in 1km radius around you. Tweet coordinates are approximative, and may have radiuses bigger than 1km set.</h2>
+                <ul id="tweets">
+                </ul>
+            </section>
+        </div>
+
+        <script id="tweet-template" type="text/html">
+        <li class="tweet">
+            <img src="{{=profile_image_url}}" alt="{{=from_user}}'s avatar"/>
+            <strong>@{{=from_user}}</strong> wrote on {{=created_at}}:
+            <blockquote>{{=text}}</blockquote>
+        </li>
+    </script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?&sensor=true"></script>
+    <script type="text/javascript" src="http://j.maxmind.com/app/geoip.js"></script>
+    <script type="text/javascript" src="js/jsrender.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/tweets.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
